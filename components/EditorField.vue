@@ -1,31 +1,31 @@
 <script setup>
-  import { ref, computed } from "vue";
   import { marked } from "marked";
-  const text = ref("dd");
+  const text = ref("# Title");
 
-  const parsed = computed(async () => {
-    const result = await marked.parse(text.value);
-    return result.charAt(0);
-  });
-  //   async function print() {
-  //     const res = await marked.parse(text.value);
-  //     return res;
-  //   }
+  function print() {
+    const res = marked.parse(text.value);
+    return res;
+  }
 </script>
 
 <template>
-  <textarea
-    v-model="text"
-    class="border border-red-500 rounded-md me-2 px-2"
-    type="text"
-    name="md"
-    id="md" />
-  <button
-    class="border border-red-500 rounded-md px-2"
-    @click="">
-    submit
-  </button>
-  <div v-html="parsed"></div>
+  <div class="flex gap-4 flex-col">
+    <textarea
+      v-model="text"
+      class="border border-primary rounded-md me-2 px-2"
+      type="text"
+      name="md"
+      id="md" />
+    <div v-html="print()"></div>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+  h1 {
+    @apply text-4xl;
+    @apply leading-normal;
+  }
+  blockquote {
+    @apply bg-red-100 border-s-8 border-s-red-300 p-2;
+  }
+</style>

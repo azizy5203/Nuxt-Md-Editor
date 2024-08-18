@@ -3,8 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <h1>Nuxt Routing set up successfully!</h1>
-    <p>Current route: {{ route.path }}</p>
+  <div class="text-primary border border-primary p-5 m-10">
+    <EditorField />
   </div>
 </template>
