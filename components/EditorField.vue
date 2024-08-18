@@ -11,12 +11,12 @@
 <template>
   <div class="flex gap-4 flex-col">
     <textarea
+      id="md"
       v-model="text"
       class="border border-primary rounded-md me-2 px-2"
       type="text"
-      name="md"
-      id="md" />
-    <div v-html="print()"></div>
+      name="md" />
+    <div v-html="print()" />
   </div>
 </template>
 
@@ -26,6 +26,6 @@
     @apply leading-normal;
   }
   blockquote {
-    @apply bg-red-100 border-s-8 border-s-red-300 p-2;
+    @apply bg-zinc-100 border-s-8 border-s-zinc-600 p-2;
   }
 </style>

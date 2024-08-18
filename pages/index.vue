@@ -1,9 +1,16 @@
 <script setup lang="ts">
   const route = useRoute();
+  useHead({
+    title: "nuxt app",
+  });
 </script>
 
 <template>
-  <div class="text-primary border border-primary p-5 m-10">
-    <EditorField />
-  </div>
+  <EditorField />
+
+  <NuxtLink
+    to="/posts"
+    class="underline text-2xl"
+    >Posts</NuxtLink
+  >
 </template>
